@@ -1,6 +1,10 @@
+<h1>Detail des manga</h1>
+<div *ngIf="manga">
+  <h2>{{ manga.title }}</h2>
+  <img [src]="'http://localhost:8000/' + manga.cover" alt="{{ manga.title }} cover" *ngIf="manga.cover"
+  class="card-img">
 <div class="card-content">
-  <h2 class="card-title">{{ manga?.title }}</h2>
-  <p><strong>Auteur :</strong> {{ manga?.idauthor }}</p>
+  <h2 class="card-title">{{ manga.title }}</h2>
+  <p><strong>Auteur:</strong> {{ manga.idauthor }}</p>
+  <p><strong>Synopsis:</strong> {{ manga.synopsis }}</p>
 </div>
-
-

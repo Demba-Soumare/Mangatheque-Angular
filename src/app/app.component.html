@@ -1,23 +1,9 @@
-
-<main class="main">
-
-<div class="navbar">
-
-  <app-header></app-header>
-
+<div class="main">
+  <div class="navbar">
+    <app-header></app-header>
+  </div>
+  <router-outlet></router-outlet>
 </div>
 
-  <div>
 
-    <app-manga-list (selectedManga)="onSelected($event)"></app-manga-list>
-    
-
-  </div>
-
-
-<router-outlet></router-outlet>
-
-
-
-</main>
 
