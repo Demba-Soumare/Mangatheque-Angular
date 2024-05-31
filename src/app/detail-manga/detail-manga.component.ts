@@ -1,32 +1,32 @@
 import { Component, OnInit } from '@angular/core';
-import { CommonModule } from '@angular/common';
-import { HttpClientModule } from '@angular/common/http';
+import { ActivatedRoute } from '@angular/router';
 import { MangaService } from '../manga.service';
 import { Manga } from '../manga';
-import { Input } from '@angular/core';
-
-
 
 @Component({
   selector: 'app-detail-manga',
-  standalone: true,
-  imports: [CommonModule, HttpClientModule,],
-
   templateUrl: './detail-manga.component.html',
-  styleUrl: './detail-manga.component.css'
+  styleUrls: ['./detail-manga.component.css']
 })
-export class DetailMangaComponent {
-  manga?: Manga;
-  @Input() Manga: Manga | null = null;
+export class DetailMangaComponent implements OnInit {
+  manga: Manga | undefined;
 
-  constructor(private mangaService: MangaService) { }
+  constructor(private route: ActivatedRoute, private mangaService: MangaService) { }
 
-  ngOnInit() {
-    const mangaId = 1;
-    this.mangaService.getMangaById(mangaId).subscribe((data: Manga) => {
-      this.manga = data;
-    });
+  ngOnInit(): void {
+    console.log('DetailMangaComponent.ngOnInit() called');
+    let id = this.route.snapshot.paramMap.get('id');
+    console.log('id:', id);
+    if (id) {
+      this.mangaService.getMangaById(+id).subscribe(
+        data => {
+          this.manga = data;
+        },
+        error => {
+          console.error('There was an error!', error);
+        }
+      );
+    }
   }
 }
-
 

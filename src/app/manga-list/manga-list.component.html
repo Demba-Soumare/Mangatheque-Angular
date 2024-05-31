@@ -2,11 +2,11 @@
   <div class="container">
     <h1>Liste des mangas</h1>
     <div class="card-container">
-      <div class="card" *ngFor="let manga of mangas">
-        <img [src]="'http://localhost:8000/' + manga.cover" alt="{{ manga.title }} cover" *ngIf="manga.cover" class="card-img">
+      <div class="card" *ngFor="let manga of mangas" (click)="selectManga(manga)">
+        <img [src]="'http://localhost:8000/' + manga.cover" alt="{{ manga.title }}" *ngIf="manga.cover" class="card-img">
         <div class="card-content">
-          <h2 class="card-title">{{ manga.title }}</h2>
-          <p><strong>Auteur:</strong> {{ manga.idauthor }}</p>
+            <a href="/detail-manga/{{manga.idmanga}}"><h2 class="card-title">{{ manga.title }}</h2></a>
+          <p><strong>Auteur :</strong> {{ manga.idauthor }}</p>
         </div>
       </div>
     </div>

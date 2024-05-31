@@ -17,7 +17,7 @@ export class MangaService {
   }
 
   getMangaById(id: number): Observable<Manga> {
-    const url = `${this.apiUrl}/${id}`;
+    const url = `${this.apiUrl}?id=${id}`;
     return this.http.get<Manga>(url);
   }
 }
