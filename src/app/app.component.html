@@ -1,9 +1,16 @@
 
 <main class="main">
 
+<div class="navbar">
+
+  <app-header></app-header>
+
+</div>
+
   <div>
-    <h1>{{ title }}</h1>
-    <app-manga-list></app-manga-list>
+
+    <app-manga-list (selectedManga)="onSelected($event)"></app-manga-list>
+    <app-detail-manga [Manga]="selectedManga"></app-detail-manga>
   </div>
 
 

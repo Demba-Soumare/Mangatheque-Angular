@@ -15,4 +15,11 @@ export class MangaService {
   getMangas(): Observable<Manga[]> {
     return this.http.get<Manga[]>(this.apiUrl);
   }
+
+  getMangaById(id: number): Observable<Manga> {
+    const url = `${this.apiUrl}/${id}`;
+    return this.http.get<Manga>(url);
+  }
 }
+
+
