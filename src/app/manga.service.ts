@@ -7,7 +7,6 @@ import { Manga } from './manga';
   providedIn: 'root'
 })
 export class MangaService {
-
   private apiUrl = 'http://localhost:8000/api.php';
 
   constructor(private http: HttpClient) { }
@@ -18,8 +17,9 @@ export class MangaService {
 
   getMangaById(id: number): Observable<Manga> {
     const url = `${this.apiUrl}?id=${id}`;
+    console.log(id);
+
     return this.http.get<Manga>(url);
   }
 }
-
 
