@@ -1,0 +1,46 @@
+.wrapper-rating {
+  display: flex;
+  flex-direction: row-reverse;
+  justify-content: flex-end;
+  font-size: 0,5em;
+  margin: 20px;
+}
+
+.wrapper-rating input {
+  display: none;
+}
+
+.wrapper-rating label {
+  color: #ccc;
+  cursor: pointer;
+  border-bottom: 2px solid currentColor;
+  font-size: 2em;
+  transition: color 0.2s;
+}
+
+
+.wrapper-rating label:hover,
+.wrapper-rating label:hover ~ label {
+  color: #ffdd00;
+
+}
+.wrapper-rating input:checked ~ label,
+.wrapper-rating input:checked ~ label ~ label {
+  color: #ffdd00;
+}
+
+button {
+  background-color: #007bff;
+  border: none;
+  border-radius: 5px;
+  color: white;
+  padding: 10px 20px;
+  cursor: pointer;
+  font-size: 1em;
+  transition: background-color 0.3s;
+}
+
+button:hover {
+  background-color: #0056b3;
+}
+

@@ -5,4 +5,6 @@ export interface Manga {
   idcategory: number;
   synopsis: string;
   cover: string;
+  isreading :string;
+  rating: number;
 }

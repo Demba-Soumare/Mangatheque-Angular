@@ -18,6 +18,11 @@ export class DetailMangaService {
     );
   }
 
+  submitRating(mangaId: number, rating: number): Observable<any> {
+    return this.http.post<any>(`${this.apiUrl}/${mangaId}/rate`, { rating });
+  }
+
+
   private handleError(error: HttpErrorResponse) {
     let errorMessage = '';
     if (error.error instanceof ErrorEvent) {
@@ -27,7 +32,7 @@ export class DetailMangaService {
       // Server-side errors
       errorMessage = `Backend returned code ${error.status}, body was: ${JSON.stringify(error.error)}`;
     }
-    console.error(errorMessage); 
+    console.error(errorMessage);
     return throwError(errorMessage);
   }
 }

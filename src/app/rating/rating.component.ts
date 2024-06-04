@@ -1,25 +1,27 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
+import { DetailMangaComponent } from '../detail-manga/detail-manga.component';
 import { DetailMangaService } from '../detail-manga.service';
-import { RatingComponent } from '../rating/rating.component';
-
 
 @Component({
-  selector: 'app-detail-manga',
-  templateUrl: './detail-manga.component.html',
-  styleUrls: ['./detail-manga.component.css'],
+  selector: 'app-rating',
   standalone: true,
-  imports: [RatingComponent],
-
+  imports: [DetailMangaComponent],
+  templateUrl: './rating.component.html',
+  styleUrls: ['./rating.component.css']
 })
-export class DetailMangaComponent implements OnInit {
+export class RatingComponent implements OnInit {
+rating: any;
+submitRating(arg0: any) {
+throw new Error('Method not implemented.');
+}
   manga: any;
   errorMessage: string = '';
 
   constructor(
     private route: ActivatedRoute,
     private detailMangaService: DetailMangaService
-  ) { }
+  ) {}
 
   ngOnInit(): void {
     this.getDetailManga();
@@ -31,13 +33,8 @@ export class DetailMangaComponent implements OnInit {
       data => this.manga = data,
       error => {
         this.errorMessage = error;
-        console.error('There was an error!', error);
+        console.error('Il y a eu une erreur!', error);
       }
     );
   }
 }
-
-
-
-
-

@@ -5,6 +5,8 @@
     <div class="manga-info">
       <p><strong>Auteur :</strong> {{ manga?.idauthor }}</p>
       <p class="manga-synopsis">{{ manga?.synopsis }}</p>
-    </div>
+      <p>L'avez-vous lu ? : <select name="isreading" id="isreading" ><option value="Oui">Oui
+      </option><option value="Non">Non</option></select></p>
+      <p> <app-rating></app-rating> </p>
   </div>
 </div>

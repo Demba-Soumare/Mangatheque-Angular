@@ -5,6 +5,7 @@ import { RouterModule } from '@angular/router';
 import { MangaService } from '../manga.service';
 import { Manga } from '../manga';
 
+
 @Component({
   selector: 'app-manga-list',
   standalone: true,

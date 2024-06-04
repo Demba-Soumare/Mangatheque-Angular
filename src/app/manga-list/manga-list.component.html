@@ -8,6 +8,13 @@
       </a>
       <div class="card-content">
         <p><strong>Auteur :</strong> {{ manga.idauthor }}</p>
+        <div class="wrapper-rating">
+          <span [class.filled]="manga.rating >= 1">&#9733;</span>
+          <span [class.filled]="manga.rating >= 2">&#9733;</span>
+          <span [class.filled]="manga.rating >= 3">&#9733;</span>
+          <span [class.filled]="manga.rating >= 4">&#9733;</span>
+          <span [class.filled]="manga.rating >= 5">&#9733;</span>
+        </div>
       </div>
     </div>
   </div>
